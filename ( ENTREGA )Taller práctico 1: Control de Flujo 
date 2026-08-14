@@ -1,0 +1,273 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPSXzf+RBwvLsKTGYmJhPRD",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/DanielRios030/Entregables-BIT-Jose-Daniel-Rios-Arias/blob/main/(%20ENTREGA%20)Taller%20pr%C3%A1ctico%201%3A%20Control%20de%20Flujo%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**TALLER PRACTICO 1**"
+      ],
+      "metadata": {
+        "id": "P1yPiEieLgDb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#PUNTO NUMERO 1 REGISTRO DE ESTUDIANTES\n",
+        "\n",
+        "Estudiantes= [(\"Ana Rodriguez\", 20, 4.5),\n",
+        "    (\"Carlos Montero\", 22, 4.2),\n",
+        "    (\"Laura Sanchez\", 19, 3.8),\n",
+        "    (\"Miguel Arias\", 21, 2.7),\n",
+        "    (\"Sofia Rios\", 20, 4.7),\n",
+        "    (\"Juan Velez\", 23, 3.5),\n",
+        "    (\"Valentina Ruiz\", 18, 4.0),\n",
+        "    (\"Pedro Cuesta\", 22, 2.9)]\n",
+        "\n",
+        "#PUNTO NUMERO 2: MOSTRAR INFORMACION\n",
+        "\n",
+        "print (\"INFORMACION DE LOS ESTUDIANTES\")\n",
+        "\n",
+        "for estudiante in Estudiantes:\n",
+        "  nombre, edad,nota = estudiante\n",
+        "  print(f\"{nombre} tiene {edad} años y obtuvo una nota de {nota}\")\n",
+        "\n",
+        "#CLASIFICACION DE ESTUDIANTES\n",
+        "\n",
+        "print(\"CLASIFICACION DE LOS ESTUDIANTES\")\n",
+        "\n",
+        "for estudiante in Estudiantes:\n",
+        "  nombre, edad, nota = estudiante\n",
+        "  if nota>= 4.5:\n",
+        "    clasificacion = \"EXCELENTE\"\n",
+        "  elif nota >= 4.0:\n",
+        "    clasificacion = \"BUENO\"\n",
+        "  elif nota>= 3.0:\n",
+        "    clasificacion = \"ACEPTABLE\"\n",
+        "  else:\n",
+        "    clasificacion = \"REPROBO\"\n",
+        "\n",
+        "  print(f\"{nombre} : {clasificacion}\")\n",
+        "\n",
+        "#PROMEDIO GENERAL\n",
+        "\n",
+        "suma_notas = 0\n",
+        "for estudiante in Estudiantes:\n",
+        "  nombre, edad, nota = estudiante\n",
+        "  suma_notas += nota\n",
+        "  promedio = suma_notas / len(Estudiantes)\n",
+        "\n",
+        "print(f\"PROMEDIO DE LAS NOTAS: {promedio}\")\n",
+        "\n",
+        "#BUSQUEDA DE ESTUDIANTE\n",
+        "\n",
+        "print(\"BUSQUEDA DE ESTUDIANTES\")\n",
+        "\n",
+        "nombre_buscar = input(\"INGRESE EL NOMBRE DEL ESTUDIANTE QUE DESEAS BUSCAR:\")\n",
+        "Encontrado = False\n",
+        "\n",
+        "for estudiante in Estudiantes:\n",
+        "  nombre, edad, nota = estudiante\n",
+        "  if nombre == nombre_buscar:\n",
+        "    print(f\"{nombre} fue encontrado\")\n",
+        "    Encontrado = True\n",
+        "    break\n",
+        "\n",
+        "#DICCIONARIO DE CIUDADES\n",
+        "\n",
+        "print(\"CIUDAD DONDE VIVEN CADA UNO LOS ESTUDIANTES\")\n",
+        "\n",
+        "Ciudades = { \"Ana Rodriguez\" : \"Bogota\",\n",
+        "    \"Carlos Montero\" : \"Medellin\",\n",
+        "    \"Laura Sanchez\" : \"Bogota\",\n",
+        "    \"Miguel Arias\" : \"Cartagena\",\n",
+        "    \" Sofia Rios\" : \"Barranquilla\",\n",
+        "    \"Juan Velez\": \"Cali\",\n",
+        "    \"Valentina Ruiz\": \"Bucaramanga\" ,\n",
+        "    \"Pedro Cuesta\" : \"Pereira\"}\n",
+        "\n",
+        "for nombre, ciudad in Ciudades.items():\n",
+        "  print(f\"{nombre} vive en {ciudad}\")\n",
+        "\n",
+        "#CANTIDAD DE ESTUDIANTES POR CIUDAD\n",
+        "\n",
+        "print(\"CANTIDAD DE ESTUDIANTES POR CIUDAD\")\n",
+        "Cantidad_por_ciudad = {}\n",
+        "for ciudad in Ciudades.values ():\n",
+        "  if ciudad in Cantidad_por_ciudad:\n",
+        "    Cantidad_por_ciudad[ciudad] += 1\n",
+        "  else:\n",
+        "    Cantidad_por_ciudad[ciudad] = 1\n",
+        "\n",
+        "print(Cantidad_por_ciudad)\n",
+        "\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5-tUAqGWiHco",
+        "outputId": "8ae81cfe-865a-410a-ead6-5e934dddb4d7"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "INFORMACION DE LOS ESTUDIANTES\n",
+            "Ana Rodriguez tiene 20 años y obtuvo una nota de 4.5\n",
+            "Carlos Montero tiene 22 años y obtuvo una nota de 4.2\n",
+            "Laura Sanchez tiene 19 años y obtuvo una nota de 3.8\n",
+            "Miguel Arias tiene 21 años y obtuvo una nota de 2.7\n",
+            "Sofia Rios tiene 20 años y obtuvo una nota de 4.7\n",
+            "Juan Velez tiene 23 años y obtuvo una nota de 3.5\n",
+            "Valentina Ruiz tiene 18 años y obtuvo una nota de 4.0\n",
+            "Pedro Cuesta tiene 22 años y obtuvo una nota de 2.9\n",
+            "CLASIFICACION DE LOS ESTUDIANTES\n",
+            "Ana Rodriguez : EXCELENTE\n",
+            "Carlos Montero : BUENO\n",
+            "Laura Sanchez : ACEPTABLE\n",
+            "Miguel Arias : REPROBO\n",
+            "Sofia Rios : EXCELENTE\n",
+            "Juan Velez : ACEPTABLE\n",
+            "Valentina Ruiz : BUENO\n",
+            "Pedro Cuesta : REPROBO\n",
+            "PROMEDIO DE LAS NOTAS: 3.7874999999999996\n",
+            "BUSQUEDA DE ESTUDIANTES\n",
+            "INGRESE EL NOMBRE DEL ESTUDIANTE QUE DESEAS BUSCAR:Sofia Rios\n",
+            "Sofia Rios fue encontrado\n",
+            "CIUDAD DONDE VIVEN CADA UNO LOS ESTUDIANTES\n",
+            "Ana Rodriguez vive en Bogota\n",
+            "Carlos Montero vive en Medellin\n",
+            "Laura Sanchez vive en Bogota\n",
+            "Miguel Arias vive en Cartagena\n",
+            " Sofia Rios vive en Barranquilla\n",
+            "Juan Velez vive en Cali\n",
+            "Valentina Ruiz vive en Bucaramanga\n",
+            "Pedro Cuesta vive en Pereira\n",
+            "CANTIDAD DE ESTUDIANTES POR CIUDAD\n",
+            "{'Bogota': 2, 'Medellin': 1, 'Cartagena': 1, 'Barranquilla': 1, 'Cali': 1, 'Bucaramanga': 1, 'Pereira': 1}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#CICLO WHITE\n",
+        "\n",
+        "print (\"CICLO WHILE\")\n",
+        "SUMA = 0\n",
+        "CANTIDAD = 0\n",
+        "while True:\n",
+        "  numero = float(input(\"Ingrese un numero: \"))\n",
+        "  if numero == 0:\n",
+        "    break\n",
+        "  SUMA += numero\n",
+        "  CANTIDAD += 1\n",
+        "if CANTIDAD > 0:\n",
+        "  PROMEDIO = SUMA / CANTIDAD\n",
+        "else:\n",
+        "  promedio = 0\n",
+        "\n",
+        "print(f\"Cantidad de numeros ingresados: {CANTIDAD}\")\n",
+        "print(f\"Suma total: {SUMA}\")\n",
+        "print(f\"Promedio de los numeros ingresados: {PROMEDIO}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "APHN5JCHOGLy",
+        "outputId": "1a378d24-eb06-454c-fa5d-5a25f090adbf"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "CICLO WHILE\n",
+            "Ingrese un numero: 10\n",
+            "Ingrese un numero: 15\n",
+            "Ingrese un numero: 20\n",
+            "Ingrese un numero: 0\n",
+            "Cantidad de numeros ingresados: 3\n",
+            "Suma total: 45.0\n",
+            "Promedio de los numeros ingresados: 15.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# BREAK AND CONTINUE\n",
+        "for numero in range (1, 31):\n",
+        "  if numero % 3 == 0:\n",
+        "    continue\n",
+        "  if numero == 25:\n",
+        "    break\n",
+        "  print(numero)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-t90P9PQOX3j",
+        "outputId": "e6f66de6-f4f6-4613-92cf-40ff9b31bfaa"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "2\n",
+            "4\n",
+            "5\n",
+            "7\n",
+            "8\n",
+            "10\n",
+            "11\n",
+            "13\n",
+            "14\n",
+            "16\n",
+            "17\n",
+            "19\n",
+            "20\n",
+            "22\n",
+            "23\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
